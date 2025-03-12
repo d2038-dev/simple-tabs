@@ -1,21 +1,25 @@
 const tabs = document.querySelectorAll("[data-tab-id]");
 const content = document.querySelector("[data-id='content']");
 
-document.addEventListener("DOMContentLoaded", changeText, { once: true });
+document.addEventListener("DOMContentLoaded", addContent, { once: true });
 tabs.forEach((tab) => {
-  tab.addEventListener("click", changeText);
+  tab.addEventListener("click", changeContent);
 });
 
-function changeText(event) {
-  const targetElement = event.target;
-  let tabId = null;
-  if (event.type === "DOMContentLoaded") {
-    tabId = "first";
-  } else if (targetElement.dataset.tabId) {
-    tabId = targetElement.dataset.tabId;
-  } else {
-    return;
-  }
+function addContent(event) {
+  const firstTab = tabs[0];
+  content.textContent = "KONO DIO DA!";
+  firstTab.classList.add("tabs__tab_active");
+}
+
+function changeContent(event) {
+  const tabId = this.dataset.tabId;
+
+  tabs.forEach((tab) => {
+    tab.classList.remove("tabs__tab_active");
+  });
+
+  this.classList.add("tabs__tab_active");
 
   switch (tabId) {
     case "first":
