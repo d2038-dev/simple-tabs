@@ -35,7 +35,7 @@ function changeContent(event) {
       break;
 
     case "fourth":
-      content.textContent = "Ora ora ora ora ora ora ora!";
+      content.textContent = "ORA ORA ORA ORA ORA ORA ORA!";
       break;
   }
 }

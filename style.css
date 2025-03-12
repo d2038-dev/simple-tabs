@@ -10,6 +10,8 @@
 
 body {
   line-height: 1.5;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .layout {
@@ -19,9 +21,40 @@ body {
   align-items: center;
 }
 
+.page {
+  width: 750px;
+  padding: 30px 30px 60px;
+  border: 3px solid black;
+  border-radius: 15px;
+}
+
 .tabs {
+  color: gray;
   display: flex;
+  gap: 35px;
 }
 
 .tabs__tab_active {
+  position: relative;
+  color: black;
+}
+
+.tabs__tab_active::after {
+  position: absolute;
+  bottom: -5px;
+  left: -15%;
+  height: 3px;
+  content: "";
+  background: black;
+  width: 130%;
+  border-radius: 10px;
+}
+
+.page__content {
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+  border-radius: 15px;
 }
