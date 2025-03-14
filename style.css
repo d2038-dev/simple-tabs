@@ -34,6 +34,14 @@ body {
   gap: 35px;
 }
 
+.tabs__tab:not(.tabs__tab_active):hover {
+  transform: scale(1.1);
+}
+
+.tabs__tab:hover {
+  cursor: pointer;
+}
+
 .tabs__tab_active {
   position: relative;
   color: black;
